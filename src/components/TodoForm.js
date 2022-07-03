@@ -27,11 +27,11 @@ function TodoForm () {
         const title = document.getElementById('title').value;
         const description = document.getElementById('description').value;
         const date = document.getElementById('date').value;
-        console.log(date);
+        //console.log(date);
         addTodo([title, description, date]);
         // Cerramos nustro modal
         //setOpenModal(false);
-        toggleButton.classList.toggle("animated");
+        
         // También estaría bien resetear nuestro formulario
         //setNewTodoValue('')
     };

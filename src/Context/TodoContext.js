@@ -110,6 +110,8 @@ function TodoProvider(props){
             });
             savedTask(newTasks);
             setOpenModal(false);
+            const toggleButton = document.querySelector('.create-todo-button')
+            toggleButton.classList.toggle("animated");
             await Toast.fire({
                 icon: 'success',
                 title: 'Success! The task has been saved successfully'
