@@ -179,12 +179,9 @@ function TodoProvider(props){
                     text: 'Your file has been deleted.',
                     icon: 'success',
                     color: '#f0f0f0',
-                    background: '#433170 url(/images/trees.png)',
+                    background: '#433170',
                     backdrop: `
                         rgba(0,0,0,0.4)
-                        url("/images/nyan-cat.gif")
-                        left top
-                        no-repeat
                     `
                 })
             } else if (

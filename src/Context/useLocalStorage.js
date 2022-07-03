@@ -77,7 +77,14 @@ function useLocalStorage(itemName, initialValue){
     try {
       localStorage.setItem(itemName, JSON.stringify(newListItem));
       setItem(newListItem);
-      setLastId(newListItem[newListItem.length-1].id);
+      const itemParsed = JSON.parse(localStorage.getItem(itemName));
+      //setLastId(newListItem[newListItem.length-1].id);
+      if(JSON.stringify(itemParsed) === '[]'){
+        setLastId(0);
+      } else {
+        //last id
+        setLastId(itemParsed[itemParsed.length-1].id)
+      }
 
     } catch (error) {
       setError(error)
