@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/todo-react-app/static/css/main.5047dd0c.css",
+    "main.js": "/todo-react-app/static/js/main.db365da5.js",
+    "static/media/todo.svg": "/todo-react-app/static/media/todo.aa2442e842a539ef75699badb311c5b3.svg",
+    "static/media/error.svg": "/todo-react-app/static/media/error.5eb12349b7290a629f6a49c8f279954f.svg",
+    "static/media/checklist.svg": "/todo-react-app/static/media/checklist.50f0bfe66e7dc5fc280ac9a9f4f56c18.svg",
+    "static/media/instagram_icon.svg": "/todo-react-app/static/media/instagram_icon.0b3e8a0c68c61f6f9de6.svg",
+    "static/media/github_icon.svg": "/todo-react-app/static/media/github_icon.88b94326e7a01ba0d14b.svg",
+    "static/media/calendar_icon.svg": "/todo-react-app/static/media/calendar_icon.d17f5bafdce63e499a36.svg",
+    "static/media/twitter_icon.svg": "/todo-react-app/static/media/twitter_icon.642a257c76b89972f7fe.svg",
+    "static/media/web_icon.svg": "/todo-react-app/static/media/web_icon.9017836d0cf8df7f7490.svg",
+    "static/media/linkedin_icon.svg": "/todo-react-app/static/media/linkedin_icon.88d4a2df77daae756c2c.svg",
+    "index.html": "/todo-react-app/index.html",
+    "static/media/delete_icon.svg": "/todo-react-app/static/media/delete_icon.58300b25879578109e1c.svg",
+    "static/media/facebook_logo.svg": "/todo-react-app/static/media/facebook_logo.e497dbd08d701525276f.svg",
+    "main.5047dd0c.css.map": "/todo-react-app/static/css/main.5047dd0c.css.map",
+    "main.db365da5.js.map": "/todo-react-app/static/js/main.db365da5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5047dd0c.css",
+    "static/js/main.db365da5.js"
+  ]
+}
