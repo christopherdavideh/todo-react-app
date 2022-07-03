@@ -161,12 +161,9 @@ function TodoProvider(props){
             cancelButtonText: 'Cancel',
             reverseButtons: true,
             color: '#f0f0f0',
-            background: '#433170 url(/images/trees.png)',
+            background: '#433170',
             backdrop: `
                 rgba(0,0,0,0.4)
-                url("/images/nyan-cat.gif")
-                left top
-                no-repeat
             `,
           }).then((result) => {
             if (result.isConfirmed) {
@@ -193,12 +190,9 @@ function TodoProvider(props){
                     text: 'Your task is safe',
                     icon: 'error',
                     color: '#f0f0f0',
-                    background: '#433170 url(/images/trees.png)',
+                    background: '#433170',
                     backdrop: `
                         rgba(0,0,0,0.4)
-                        url("/images/nyan-cat.gif")
-                        left top
-                        no-repeat
                     `
                 })
             }
