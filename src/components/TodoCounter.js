@@ -1,8 +1,6 @@
 import React from "react";
-import { TodoContext } from "../Context/TodoContext";
 
-function TodoCounter(){
-    const {searchValue, totalTask, completedTask} = React.useContext(TodoContext);
+function TodoCounter({searchValue, totalTask, completedTask}){
 
     let title = "";
     if (searchValue.length > 0) {

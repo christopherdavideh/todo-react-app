@@ -1,24 +1,23 @@
 import React from "react";
-import { TodoContext } from "../Context/TodoContext";
 import "../css/main.css"
 
-function TodoForm () {
+function TodoForm ({addTodo, setOpenModal}) {
     // Desestructuramos las funciones que necesitamos para añadir un TODO y cerrar nuestro modal
-    const {
+    /*const {
         addTodo,
         setOpenModal,
     } = React.useContext(TodoContext);
-    
+    */
     const toggleButton = document.querySelector('.create-todo-button')
-        
+
     // Función para cerrar el modal
     const onCancel = () => {
         setOpenModal(false);
         toggleButton.classList.toggle("animated");
     };
-    
-    
-    
+
+
+
     // Función para agregar nuestro nuevo TODO
     const onSubmit = (event) => {
         // prevent default para evitar recargar la página

@@ -1,8 +1,6 @@
 import React from "react";
-import { TodoContext } from "../Context/TodoContext";
 
-function CreateTodoButton(){
-    const {setOpenModal} = React.useContext(TodoContext);
+function CreateTodoButton({setOpenModal}){
     const toggleButton = document.querySelector('.create-todo-button');
     const onOpenModal = () => {
         setOpenModal(prevOpenModal => !prevOpenModal);

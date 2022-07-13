@@ -1,13 +1,13 @@
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
 import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
+//import withReactContent from 'sweetalert2-react-content';
 
-const MySwal = withReactContent(Swal);
+//const MySwal = withReactContent(Swal);
 
-const TodoContext = React.createContext();
+//const TodoContext = React.createContext();
 
-function TodoProvider(props){
+function useTodo(){
     let date = new Date().getFullYear().toString();
     //Estados
     const [searchValue, setSearchValue] = React.useState('');
@@ -144,15 +144,15 @@ function TodoProvider(props){
                 MySwal.fire('Changes are not saved', '', 'info')
             }
           });*/
-          const swalWithBootstrapButtons = Swal.mixin({
+        const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
-              confirmButton: 'colored-btn swal2-icon-success',
-              cancelButton: 'colored-btn swal2-icon-error'
+                confirmButton: 'colored-btn swal2-icon-success',
+                cancelButton: 'colored-btn swal2-icon-error'
             },
             buttonsStyling: false
-          })
-          
-          swalWithBootstrapButtons.fire({
+        })
+
+        swalWithBootstrapButtons.fire({
             title: 'Are you sure to delete the task?',
             text: "You won't be able to revert this!",
             icon: 'warning',
@@ -165,7 +165,7 @@ function TodoProvider(props){
             backdrop: `
                 rgba(0,0,0,0.4)
             `,
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
                 const todoIndex = tasks.findIndex( task => task.id === id);
                 const newTasks = [...tasks];
@@ -183,7 +183,7 @@ function TodoProvider(props){
                 })
             } else if (
               /* Read more about handling dismissals below */
-              result.dismiss === Swal.DismissReason.cancel
+                result.dismiss === Swal.DismissReason.cancel
             ) {
                 swalWithBootstrapButtons.fire({
                     title:'Cancelled!',
@@ -196,30 +196,26 @@ function TodoProvider(props){
                     `
                 })
             }
-          })
+        });
     }
 
-    return(
-        <TodoContext.Provider value={{
-            searchValue,
-            setSearchValue,
-            totalTask,
-            todoTasks,
-            doTasks,
-            completedTask,
-            noCompletedTask,
-            completeTask,
-            addTodo,
-            deleteTask,
-            date,
-            loading,
-            error,
-            openModal,
-            setOpenModal
-        }}>
-            {props.children}
-        </TodoContext.Provider>
-    );
+    return {
+        searchValue,
+        setSearchValue,
+        totalTask,
+        todoTasks,
+        doTasks,
+        completedTask,
+        noCompletedTask,
+        completeTask,
+        addTodo,
+        deleteTask,
+        date,
+        loading,
+        error,
+        openModal,
+        setOpenModal
+    };
 }
 
-export { TodoContext, TodoProvider };
+export { useTodo };
