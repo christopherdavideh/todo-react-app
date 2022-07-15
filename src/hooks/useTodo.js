@@ -22,6 +22,7 @@ function useTodo(){
     const totalTask = tasks.length;
     let todoTasks = [];
     let doTasks = [];
+    let searchedTasks = [];
 
     const [openModal, setOpenModal] = React.useState(false)
 
@@ -34,23 +35,31 @@ function useTodo(){
 
         const searchValueLower = searchValue.toLowerCase();
         todoTasks = tasks.filter((task) => {
-        const taskLower = task.title.toLowerCase();
-        if (!task.completed && taskLower.includes(searchValueLower)) {
-            return task
-        }
+            const taskLower = task.title.toLowerCase();
+            if (!task.completed && taskLower.includes(searchValueLower)) {
+                return task
+            }
         });
 
         doTasks = tasks.filter(task => {
-        const doTaskLower = task.title.toLowerCase();
-        if (task.completed && doTaskLower.includes(searchValueLower)) {
-            return task
-        }
+            const doTaskLower = task.title.toLowerCase();
+            if (task.completed && doTaskLower.includes(searchValueLower)) {
+                return task
+            }
+        });
+
+        searchedTasks = tasks.filter(task => {
+            const doTaskLower = task.title.toLowerCase();
+            if (doTaskLower.includes(searchValueLower)) {
+                return task
+            }
         });
 
     }
 
     const completedTask = doTasks.length;
     const noCompletedTask = todoTasks.length;
+    const totalSearch = searchedTasks.length;
 
 
     const completeTask = (id) => {
@@ -203,6 +212,7 @@ function useTodo(){
         searchValue,
         setSearchValue,
         totalTask,
+        totalSearch,
         todoTasks,
         doTasks,
         completedTask,

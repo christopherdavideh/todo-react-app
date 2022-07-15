@@ -1,9 +1,9 @@
 import React from "react";
 
-function TodoMain ({children}){
+function TodoMain (props){
     return(
         <main>
-            {children}
+            {props.children(props.error)}
         </main>
     );
 }

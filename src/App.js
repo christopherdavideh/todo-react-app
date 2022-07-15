@@ -24,6 +24,7 @@ function App() {
         todoTasks,
         doTasks,
         totalTask,
+        totalSearch,
         completeTask,
         noCompletedTask,
         completedTask,
@@ -42,45 +43,70 @@ function App() {
             <header className="header">
                 <h1> ToDo React App</h1>
             </header>
-            <TodoMain>
-                {error && <Error error={error} />}
+            <TodoMain error = {error} >
+            {(errorLoad) => {
+                    if (!!errorLoad) {
+                        return (<Error error = {errorLoad} />);
 
-                {!error &&
-                    <React.Fragment>
-                        <TodoSearch searchValue = {searchValue} setSearchValue = {setSearchValue} />
+                    } else if (!errorLoad) {
+                        return (
+                            <React.Fragment>
+                                <TodoSearch searchValue = {searchValue} setSearchValue = {setSearchValue} />
 
-                        <TodoCounter searchValue = {searchValue} totalTask = {totalTask} completedTask = {completedTask}/>
+                                <TodoCounter searchValue = {searchValue} totalTask = {totalTask} completedTask = {completedTask}/>
 
-                        <div className='main-container'>
-                            <TodoList noCompletedTask = {noCompletedTask}>
-                                {loading && <LoadSkeleton/>}
-                                {(!loading && !todoTasks.length) && <EmptyTodo img={todoImg} msg={"You don't have to-do, create a task"} />}
-                                {
-                                todoTasks.map( todoTask => ( //console.log(todoTask.title)
-                                    <TodoItem key={todoTask.id} text= {todoTask} completeTask={() => completeTask(todoTask.id)} deleteTask={() => deleteTask(todoTask.id)}/>
-                                ))
-                                }
-                            </TodoList>
-                            <CompleteTodoList completedTask={completedTask}>
-                                {loading && <LoadSkeleton/>}
-                                {(!loading && !doTasks.length) && <EmptyTodo img={doneImg} msg={'Complete one of your tasks'} />}
-                                {
-                                doTasks.map( doTask => ( //console.log(doTask.title)
-                                    <TodoItem key={doTask.id} text= {doTask} completeTask={() => completeTask(doTask.id)} deleteTask={() => deleteTask(doTask.id)}/>
-                                ))
-                                }
-                            </CompleteTodoList>
-                        </div>
-                        <CreateTodoButton setOpenModal= {setOpenModal} />
-                    </React.Fragment>
-                }
-                {!!openModal && (
-                    <Modal>
-                        <TodoForm addTodo = {addTodo} setOpenModal = {setOpenModal} />
-                    </Modal>
-                )}
+                                <div className='main-container'>
+                                    <TodoList 
+                                        noCompletedTask = {noCompletedTask}
+                                        loading = {loading}
+                                        todoTasks = {todoTasks}
+                                        totalTask = {searchValue}
+                                        totalSearch = {totalSearch}
+                                        onLoading = {() => <LoadSkeleton />}
+                                        onEmpty = {(msg) => <EmptyTodo img={todoImg} msg={msg} />}
+                                        render = { (todo) =>  //console.log(todo.title)
+                                            <TodoItem key={todo.id} text= {todo} completeTask={() => completeTask(todo.id)} deleteTask={() => deleteTask(todo.id)}/>
 
+                                        }
+                                    >
+                                        {/*loading && <LoadSkeleton/>}
+                                        {(!loading && !todoTasks.length) && <EmptyTodo img={todoImg} msg={"You don't have to-do, create a task"} />}
+                                        {
+                                        todoTasks.map( todoTask => ( //console.log(todoTask.title)
+                                            <TodoItem key={todoTask.id} text= {todoTask} completeTask={() => completeTask(todoTask.id)} deleteTask={() => deleteTask(todoTask.id)}/>
+                                        ))
+                                        */}
+                                    </TodoList>
+                                    <TodoList 
+                                        completedTask={completedTask}
+                                        loading = {loading}
+                                        doTasks = {doTasks}
+                                        totalTask = {searchValue}
+                                        totalSearch = {totalSearch}
+                                        onLoading = {() => <LoadSkeleton />}
+                                        onEmpty = {(msg) => <EmptyTodo img={doneImg} msg={msg} />}
+                                        render = { (todo) =>  //console.log(todo.title)
+                                            <TodoItem key={todo.id} text= {todo} completeTask={() => completeTask(todo.id)} deleteTask={() => deleteTask(todo.id)}/>
+
+                                        }
+                                    />
+                                    {/*<CompleteTodoList completedTask={completedTask}>
+                                        {loading && <LoadSkeleton/>}
+                                        {(!loading && !doTasks.length) && <EmptyTodo img={doneImg} msg={'Complete one of your tasks'} />}
+                                        {
+                                        doTasks.map( doTask => ( //console.log(doTask.title)
+                                            <TodoItem key={doTask.id} text= {doTask} completeTask={() => completeTask(doTask.id)} deleteTask={() => deleteTask(doTask.id)}/>
+                                        ))
+                                        }
+                                    </CompleteTodoList>*/}
+                                </div>
+                                <CreateTodoButton setOpenModal= {setOpenModal} />
+                            </React.Fragment>
+                        );
+                    }
+                }}
             </TodoMain>
+
             <footer id="footer_main" className="footer">
                 <p>@christopherdavideh • All rights reserved © {date}.</p>
                 <nav>
@@ -94,6 +120,12 @@ function App() {
                     </ul>
                 </nav>
             </footer>
+
+            {!!openModal && (
+                <Modal>
+                    <TodoForm addTodo = {addTodo} setOpenModal = {setOpenModal} />
+                </Modal>
+            )}
         </React.Fragment>
     );
 }
