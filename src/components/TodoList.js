@@ -15,7 +15,7 @@ function TodoList ({noCompletedTask, completedTask, loading, todoTasks, doTasks,
     todoTasks && (msg = "You don't have to-do, create a task");
     doTasks && (msg = "Complete one of your tasks");
     if ((totalSearch !== 0 && todoTasks) || (totalSearch !== 0 && doTasks) || (totalSearch === 0 && totalTask.length > 0 && !todoTasks) | (totalSearch === 0 && totalTask.length > 0 && !doTasks)){
-        console.log(totalTask.length);
+        //console.log(totalTask.length);
         msg = "Don't have results";
     }
 
