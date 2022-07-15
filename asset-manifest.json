@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/todo-react-app/static/css/main.5047dd0c.css",
-    "main.js": "/todo-react-app/static/js/main.d673f663.js",
+    "main.js": "/todo-react-app/static/js/main.494de3be.js",
     "static/media/todo.svg": "/todo-react-app/static/media/todo.aa2442e842a539ef75699badb311c5b3.svg",
     "static/media/error.svg": "/todo-react-app/static/media/error.5eb12349b7290a629f6a49c8f279954f.svg",
     "static/media/checklist.svg": "/todo-react-app/static/media/checklist.50f0bfe66e7dc5fc280ac9a9f4f56c18.svg",
@@ -15,10 +15,10 @@
     "static/media/delete_icon.svg": "/todo-react-app/static/media/delete_icon.58300b25879578109e1c.svg",
     "static/media/facebook_logo.svg": "/todo-react-app/static/media/facebook_logo.e497dbd08d701525276f.svg",
     "main.5047dd0c.css.map": "/todo-react-app/static/css/main.5047dd0c.css.map",
-    "main.d673f663.js.map": "/todo-react-app/static/js/main.d673f663.js.map"
+    "main.494de3be.js.map": "/todo-react-app/static/js/main.494de3be.js.map"
   },
   "entrypoints": [
     "static/css/main.5047dd0c.css",
-    "static/js/main.d673f663.js"
+    "static/js/main.494de3be.js"
   ]
 }
