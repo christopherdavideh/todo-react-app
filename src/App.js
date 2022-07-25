@@ -18,7 +18,7 @@ import { Error } from "./components/Error";
 import todoImg from './img/todo.svg';
 import doneImg from './img/checklist.svg';
 import { ContainerTodo } from "./components/ContainerTodo";
-import { SyncAlertWithStorageListener } from "./components/SyncAlert";
+import { SyncAlert } from "./components/SyncAlert";
 
 function App() {
     const {
@@ -96,7 +96,7 @@ function App() {
                         </CompleteTodoList>*/}
                     </ContainerTodo>
                     <CreateTodoButton setOpenModal= {setOpenModal} />
-                    <SyncAlertWithStorageListener syncItem = {syncItem}/>
+                    <SyncAlert syncItem = {syncItem}/>
                 </TodoMain>
             )}
 

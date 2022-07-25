@@ -1,10 +1,11 @@
 import React from "react";
-import { withStorageListener } from "../hooks/withStorageListener";
+import { useStorageListener } from "../hooks/useStorageListener";
 
-function SyncAlert({storageChange, showAlert}){
-
-    
-
+function SyncAlert({syncItem}){
+    const { 
+        storageChange,
+        showAlert
+    } = useStorageListener(syncItem);
     return(
         storageChange && (
             <div className="sync-alert">
@@ -17,6 +18,5 @@ function SyncAlert({storageChange, showAlert}){
     )
 }
 
-const SyncAlertWithStorageListener = withStorageListener(SyncAlert);
 
-export {SyncAlertWithStorageListener};
+export {SyncAlert};
