@@ -23,7 +23,7 @@ function TodoList ({noCompletedTask, completedTask, loading, todoTasks, doTasks,
 
     return(
         <section className="main-task-todo">
-            <h3>{`${subtitle} ${title}`}</h3>
+            {!loading &&<h3>{`${subtitle} ${title}`}</h3>}
             <div>
                 {loading && onLoading()}
                 {(!loading && !showTasks.length) && onEmpty(msg)}

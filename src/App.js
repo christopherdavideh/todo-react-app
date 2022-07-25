@@ -18,6 +18,7 @@ import { Error } from "./components/Error";
 import todoImg from './img/todo.svg';
 import doneImg from './img/checklist.svg';
 import { ContainerTodo } from "./components/ContainerTodo";
+import { SyncAlertWithStorageListener } from "./components/SyncAlert";
 
 function App() {
     const {
@@ -37,6 +38,7 @@ function App() {
         searchValue,
         setSearchValue,
         addTodo,
+        syncItem,
     } = useTodo();
     return (
         <React.Fragment>
@@ -94,6 +96,7 @@ function App() {
                         </CompleteTodoList>*/}
                     </ContainerTodo>
                     <CreateTodoButton setOpenModal= {setOpenModal} />
+                    <SyncAlertWithStorageListener syncItem = {syncItem}/>
                 </TodoMain>
             )}
 
@@ -101,12 +104,12 @@ function App() {
                 <p>@christopherdavideh • All rights reserved © {date}.</p>
                 <nav>
                     <ul className="footer-social">
-                        <li><a href="https://www.linkedin.com/in/christopherdavideh/" target="_blank" title="LinkedIn"><span className="footer-linkedin"></span></a></li>
-                        <li><a href="https://github.com/christopherdavideh" target="_blank" title="GitHub"><span className="footer-github"></span></a></li>
-                        <li><a href="https://twitter.com/christopdavideh" target="_blank" title="Twitter"><span className="footer-twitter"></span></a></li>
-                        <li><a href="https://www.instagram.com/christopherdavideh/" target="_blank" title="Instagram"><span className="footer-instagram"></span></a></li>
-                        <li><a href="https://www.facebook.com/christopherdavideh" target="_blank" title="Facebook"><span className="footer-facebook"></span></a></li>
-                        <li><a href="https://christopherdavideh.com/" target="_blank" title="My Web"><span className="footer-web"></span></a></li>
+                        <li><a href="https://www.linkedin.com/in/christopherdavideh/" target="_blank" rel="noreferrer" title="LinkedIn"><span className="footer-linkedin"></span></a></li>
+                        <li><a href="https://github.com/christopherdavideh" target="_blank" rel="noreferrer" title="GitHub"><span className="footer-github"></span></a></li>
+                        <li><a href="https://twitter.com/christopdavideh" target="_blank" rel="noreferrer" title="Twitter"><span className="footer-twitter"></span></a></li>
+                        <li><a href="https://www.instagram.com/christopherdavideh/" target="_blank" rel="noreferrer" title="Instagram"><span className="footer-instagram"></span></a></li>
+                        <li><a href="https://www.facebook.com/christopherdavideh" target="_blank" rel="noreferrer" title="Facebook"><span className="footer-facebook"></span></a></li>
+                        <li><a href="https://christopherdavideh.com/" target="_blank" rel="noreferrer" title="My Web"><span className="footer-web"></span></a></li>
                     </ul>
                 </nav>
             </footer>

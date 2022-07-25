@@ -16,7 +16,8 @@ function useTodo(){
         savedItem: savedTask,
         loading,
         error,
-        lastIdTask
+        lastIdTask,
+        syncItem
     } = useLocalStorage('TASK_V1', []);
 
     const totalTask = tasks.length;
@@ -224,7 +225,8 @@ function useTodo(){
         loading,
         error,
         openModal,
-        setOpenModal
+        setOpenModal,
+        syncItem
     };
 }
 
