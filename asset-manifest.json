@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/todo-react-app/static/css/main.df1d2254.css",
-    "main.js": "/todo-react-app/static/js/main.eb39777e.js",
+    "main.css": "/todo-react-app/static/css/main.339a4018.css",
+    "main.js": "/todo-react-app/static/js/main.54afbed7.js",
     "static/media/todo.svg": "/todo-react-app/static/media/todo.aa2442e842a539ef75699badb311c5b3.svg",
     "static/media/error.svg": "/todo-react-app/static/media/error.5eb12349b7290a629f6a49c8f279954f.svg",
     "static/media/checklist.svg": "/todo-react-app/static/media/checklist.50f0bfe66e7dc5fc280ac9a9f4f56c18.svg",
@@ -14,11 +14,11 @@
     "index.html": "/todo-react-app/index.html",
     "static/media/delete_icon.svg": "/todo-react-app/static/media/delete_icon.58300b25879578109e1c.svg",
     "static/media/facebook_logo.svg": "/todo-react-app/static/media/facebook_logo.e497dbd08d701525276f.svg",
-    "main.df1d2254.css.map": "/todo-react-app/static/css/main.df1d2254.css.map",
-    "main.eb39777e.js.map": "/todo-react-app/static/js/main.eb39777e.js.map"
+    "main.339a4018.css.map": "/todo-react-app/static/css/main.339a4018.css.map",
+    "main.54afbed7.js.map": "/todo-react-app/static/js/main.54afbed7.js.map"
   },
   "entrypoints": [
-    "static/css/main.df1d2254.css",
-    "static/js/main.eb39777e.js"
+    "static/css/main.339a4018.css",
+    "static/js/main.54afbed7.js"
   ]
 }
