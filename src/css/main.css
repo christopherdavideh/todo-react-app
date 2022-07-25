@@ -67,6 +67,11 @@ main #search {
 main #search:hover {
     box-shadow: 0px 0px 25px rgba(209, 97, 250, 0.5);
 }
+
+.search-visible:disabled {
+    opacity: 85%;
+    background-color: #fafaface;
+}
 .main-container {
     display: flex;
     flex-wrap: nowrap;

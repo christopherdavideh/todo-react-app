@@ -1,6 +1,6 @@
 import React from "react";
 
-function CreateTodoButton({setOpenModal}){
+function CreateTodoButton({setOpenModal, loading}){
     const toggleButton = document.querySelector('.create-todo-button');
     const onOpenModal = () => {
         setOpenModal(prevOpenModal => !prevOpenModal);
@@ -8,7 +8,7 @@ function CreateTodoButton({setOpenModal}){
     }
 
     return(
-        <button className="create-todo-button" title="Add new Task" onClick={onOpenModal}>+</button>
+        !loading && <button className="create-todo-button" title="Add new Task" onClick={onOpenModal}>+</button>
     )
 }
 

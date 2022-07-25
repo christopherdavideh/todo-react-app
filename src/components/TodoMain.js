@@ -1,9 +1,9 @@
 import React from "react";
 
-function TodoMain (props){
+function TodoMain ({children, loading}){
     return(
-        <main>
-            {props.children(props.error)}
+        <main>            
+            {React.Children.toArray(children).map((child) => React.cloneElement(child, { loading }))}
         </main>
     );
 }
