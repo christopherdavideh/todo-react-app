@@ -11,4 +11,6 @@ Web application to manage and organize our tasks
 - Use of RenderProps, RenderFunctions, React.Children and React.cloneElement.
 - Use localStorage and StorageEventListener to persist and sync app data.
 
+![](https://christopherdavideh.com/images/todo-react.png)
+
 [Demo](https://christopherdavideh.github.io/todo-react-app/)
